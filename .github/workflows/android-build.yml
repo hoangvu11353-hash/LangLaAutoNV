@@ -40,9 +40,9 @@ jobs:
 
       - name: Extract Android source ZIP
         run: |
-          test -f LangLaAuto_v0.5.0_Source.zip
+          test -f LangLaAuto_v0.6.0_Source.zip
           mkdir -p extracted
-          unzip -q LangLaAuto_v0.5.0_Source.zip -d extracted
+          unzip -q LangLaAuto_v0.6.0_Source.zip -d extracted
           test -f extracted/src/settings.gradle.kts
           test -f extracted/src/app/build.gradle.kts
 
@@ -52,7 +52,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: LangLaAuto-v0.5.0-debug
+          name: LangLaAuto-v0.6.0-debug
           path: extracted/src/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
